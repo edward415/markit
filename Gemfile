@@ -40,3 +40,11 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Devise for user authentication
+gem 'devise'
+
+# ENV vars management
+gem 'figaro', '1.0'
+
+# Gritter for notificatoins
+gem 'gritter', '1.1.0'

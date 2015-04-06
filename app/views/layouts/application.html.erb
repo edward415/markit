@@ -10,8 +10,33 @@
 <div class="container">
   <ul class="nav nav-pills">
     <li role="presentation" class="active"><%= link_to "Markit", root_path %></li>
+      <% if current_user %>
+        <li role="presentation"><%= link_to "Hi #{current_user.name || current_user.email}", edit_user_registration_path %></li>
+        <li role="presentation"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li role="presentation"><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li role="presentation"><%= link_to "Login", new_user_session_path %></li>
+      <% end %>
+    </div>
   </ul>
 </div>
+<!--<%= add_gritter("This is a notification just for you!", :title => "Please pay attention!") %>-->
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <button type="button" class=:"close" data-dismiss="alert">&times;</button>
+    <%= flash[:notice] %>
+  </div>
+    <% elsif flash[:error] %>
+  <div class="alert alert-danger">
+    <button type="button" class=:"close" data-dismiss="alert">&times;</button>
+    <%= flash[:error] %>
+  </div>
+    <% elsif flash[:alert] %>
+  <div class="alert alert-warning">
+    <button type="button" class=:"close" data-dismiss="alert">&times;</button>
+    <%= flash[:alert] %>
+  </div>
+<% end %>
 
 <%= yield %>
 
