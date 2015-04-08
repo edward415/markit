@@ -3,7 +3,7 @@ ActionMailer::Base.smtp_settings = {
   address:           'smtp.mailgun.org',
   user_name:         ENV['MAILGUN_SMTP_LOGIN'],
   password:          ENV['MAILGUN_SMTP_PASSWORD'],
-  domain:            'edmarkit.herokuapp.com',
+  domain:            'app854d29119bd34f2d9c4622564a5e88ec.mailgun.org',
   authentication:    :plain,
   content_type:      'text/html'
 }
