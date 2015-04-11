@@ -1,12 +1,12 @@
 class TopicsController < ApplicationController
   
   def index
-    @topics = Topic.all
+    @topics = Topic.paginate(page: params[:page], per_page: 20)
   end
 
   def show
     @topic = Topic.find(params[:id])
-    @bookmarks = @topic.bookmarks
+    @bookmarks = @topic.bookmarks.paginate(page: params[:page], per_page: 20)
   end
 
   def edit
