@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get 'topics/index'
-
-  get 'topics/show'
-
-  get 'topics/edit'
-
-  get 'topics/new'
+  
 
   devise_for :users
   get 'welcome/index'
@@ -13,6 +7,10 @@ Rails.application.routes.draw do
   get 'welcome/about'
   
   root to: 'welcome#index'
+  
+  resources :topics
+  
+  resources :bookmarks
   
   post :incoming, to: 'incoming#create'
 

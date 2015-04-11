@@ -12,14 +12,14 @@ ActionMailer::Base.delivery_method = :smtp
 # Makes debugging *way* easier.
 ActionMailer::Base.raise_delivery_errors = true
 
-class DevelopmentMailInterceptor
-  def self.delivery_email(message)
-    message.to = 'edward415@gmail.com'
-    message.cc = nil
-    message.bcc = nil
-  end
-end
+# class DevelopmentMailInterceptor
+#   def self.delivery_email(message)
+#     message.to = 'edward415@gmail.com'
+#     message.cc = nil
+#     message.bcc = nil
+#   end
+# end
 
-if Rails.env.development?
-  ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor)
-end
+# if Rails.env.development?
+#   ActionMailer::Base.register_interceptor(DevelopmentMailInterceptor)
+# end

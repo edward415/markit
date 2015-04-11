@@ -1,10 +1,12 @@
 class TopicsController < ApplicationController
+  
   def index
-    @topic = current_user.topics
+    @topics = Topic.all
   end
 
   def show
-    @bookmarks = current_user.topics.bookmarks.where("topic_id == ?", params[:topic_id])
+    @topic = Topic.find(params[:id])
+    @bookmarks = @topic.bookmarks
   end
 
   def edit

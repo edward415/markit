@@ -42,9 +42,11 @@ skip_before_action :verify_authenticity_token, only: [:create]
   def create
     
     @user = User.where(email: params['sender']).first
-    @topic = Topic.where(title: params[:subject]).first_or_create
-    url = params['stripped-text']
-    @bookmark = @topic.bookmarks.create!(url: url, topic_id: @topic.id, user_id: @user.id)
+    if !@user.nil
+      @topic = Topic.where(title: params[:subject]).first_or_create
+      url = params['stripped-text']
+      @bookmark = @topic.bookmarks.create!(url: url, topic_id: @topic.id, user_id: @user.id)
+    end
 
     head 200
   end

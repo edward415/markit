@@ -52,5 +52,7 @@ gem 'devise'
 # ENV vars management
 gem 'figaro', '1.0'
 
+# seed data
+gem 'faker'
 # Gritter for notificatoins
 #gem 'gritter', '1.1.0'
