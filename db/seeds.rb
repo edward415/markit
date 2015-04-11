@@ -23,11 +23,12 @@ topics = Topic.all
   Bookmark.create!(
     url: Faker::Internet.domain_name,
     topic: topics.sample,
-    user: user.sample
+    user: users.sample
   )
 end
 
 
 puts "Done Seeding"
+puts "#{User.count} users created"
 puts "#{Topic.count} topics created"
 puts "#{Bookmark.count} bookmarks created"

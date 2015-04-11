@@ -1,16 +1,18 @@
+<div class="container">
 <%= topics.each do |t| %>
   <div class="row">
-    <h3><%= t.title %></h3>
+    <h3><%= link_to t.title, t %></h3>
   <%= t.bookmarks.last(3).each do |b| %> 
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <img src="http://placehold.it/360x210/4D76BC/000000&text=site+screen+shot+here!">
       </div>
       <div class="caption">
-        <p><%= b.url %></p>
+        <p><a href="<%= b.url %>"><%= b.url %> </a></p>
         <p><%= link_to "", root_path, class: 'glyphicon glyphicon-heart' %></p>
       </div>
     </div>
   <% end %>
   </div>
 <% end %>
+</div>
