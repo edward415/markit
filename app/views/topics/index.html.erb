@@ -1,4 +1,4 @@
 <div class="container">
-  <h1>Topics</h1>
+  <h1>Topics <%= link_to "New Topic", new_topic_path, class: 'btn btn-success pull-right' %></h1>
   <%= render partial: 'topics', locals: {topics: @topics}  %>   
 </div>

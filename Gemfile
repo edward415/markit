@@ -54,5 +54,9 @@ gem 'figaro', '1.0'
 
 # seed data
 gem 'faker'
+
+# Pagination
+gem 'will_paginate', '~> 3.0.5'
+
 # Gritter for notificatoins
 #gem 'gritter', '1.1.0'
