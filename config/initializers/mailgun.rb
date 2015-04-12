@@ -5,7 +5,8 @@ ActionMailer::Base.smtp_settings = {
   password:          ENV['MAILGUN_SMTP_PASSWORD'],
   domain:            'app854d29119bd34f2d9c4622564a5e88ec.mailgun.org',
   authentication:    :plain,
-  content_type:      'text/html'
+  content_type:      'text/html',
+  enable_starttls_auto: true
 }
 ActionMailer::Base.delivery_method = :smtp
 

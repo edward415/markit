@@ -1,9 +1,9 @@
 <div class="container">
-<%= topics.each do |t| %>
+<% topics.each do |t| %>
   <h3><%= link_to t.title, t %></h3>
   <% if t.bookmarks.count > 0 %>
     <div class="row">
-    <%= t.bookmarks.last(3).each do |b| %> 
+    <% t.bookmarks.last(3).each do |b| %> 
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
           <img src="http://placehold.it/360x210/4D76BC/000000&text=site+screen+shot+here!">
