@@ -60,3 +60,6 @@ gem 'will_paginate', '~> 3.0.5'
 
 # Gritter for notificatoins
 #gem 'gritter', '1.1.0'
+
+# For Site Previews
+gem 'embedly'

@@ -1,3 +1,4 @@
+<script src="http://cdn.embed.ly/jquery.embedly-3.1.1.min.js" type="text/javascript"></script>
 <div class="container">
 <% topics.each do |t| %>
   <h3><%= link_to t.title, t %></h3>
@@ -6,11 +7,9 @@
     <% t.bookmarks.last(3).each do |b| %> 
       <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-          <img src="http://placehold.it/360x210/4D76BC/000000&text=site+screen+shot+here!">
-          <div class="caption">
-          <p><a href="<%= b.url %>"><%= b.url %> </a></p>
           <p><%= link_to "", root_path, class: 'glyphicon glyphicon-heart' %></p>
-          </div>
+          <p><a href="<%= b.url %>" class="embedly-card" data-card-theme="light"><%= b.url %> </a></p>
+          
         </div>
       </div>
     <% end %>
@@ -20,3 +19,4 @@
   <% end %>
 <% end %>
 </div>
+<script src="//cdn.embedly.com/widgets/platform.js"></script>

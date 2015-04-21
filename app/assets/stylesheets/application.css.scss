@@ -15,3 +15,11 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.thumbnail {
+  height: 443px;
+}
+
+.embedly-card {
+  max-height: 250px;  
+}
