@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="col-md-4">
+    <h1>New Bookmark</h1>
+    <p>Save your new favorite site so you don't forget it!</p>
+  </div>
+  <div class="col-md-12">
+    <%= form_for [@topic, Bookmark.new] do |f| %>
+      <div class="form-group">
+        <%= f.label "Bookmark URL" %>
+        <%= f.text_field :url, class: 'form-control', placeholder: 'Enter the url for your bookmark!' %>
+      </div>
+      <%= f.submit "Save", class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>
