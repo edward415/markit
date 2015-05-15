@@ -1,2 +1,14 @@
-<h1>Bookmarks#update</h1>
-<p>Find me in app/views/bookmarks/update.html.erb</p>
+<div class="container">
+  <div class="col-md-4">
+    <h1>Edit Your Bookmark</h1>
+  </div>
+  <div class="col-md-12">
+    <%= form_for [@topic, @bookmark] do |f| %>
+    <div class="form-group">
+      <%= f.label "Bookmark URL" %>
+      <%= f.text_field :url, class: 'form_control', placeholder: 'Enter new bookmark url' %>
+    </div>
+    <%= f.submit "Save", class: 'btn btn-success' %>
+    <% end %>
+  </div>
+</div>

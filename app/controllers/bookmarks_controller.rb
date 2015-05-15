@@ -42,10 +42,10 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.find(params[:id])
     if @bookmark.update_attributes(bookmark_params)
       flash[:notice] = "Bookmark was successfully updated"
-      redirect_to topics_path
+      redirect_to @topic
     else
       flash[:error] = "Failed to update bookmark, please try again"
-      render new_topic_bookmark_path(@topic)
+      render :show
     end
   end
   

@@ -3,7 +3,7 @@
 <% bookmarks.each do |b| %>
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <p><%= link_to "", [@topic, b], controller: :bookmarks, method: :delete, class: 'glyphicon glyphicon-remove pull-right' %></p>
+      <p><%= link_to "", [@topic, b], method: :delete, class: 'glyphicon glyphicon-remove pull-right' %></p>
       <p><%= link_to "", root_path, class: 'glyphicon glyphicon-heart' %><a href="<%= b.url %>" class="embedly-card" data-card-theme="light"><%= b.url %> </a></p>
       <p><%= link_to "Edit", edit_topic_bookmark_path(@topic, b), class: 'btn btn-success' %></p>
     </div>
