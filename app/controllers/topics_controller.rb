@@ -11,14 +11,17 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find(params[:id])
+    authorize @topic
   end
 
   def new
     @new_topic= Topic.new
+    authorize @new_topic
   end
   
   def create
     @topic = current_user.topics.build(topic_params)
+    authorize @topic
     if @topic.save
       flash[:notice] = "Topic was successfully created"
       redirect_to topics_path
@@ -30,6 +33,7 @@ class TopicsController < ApplicationController
   
   def update
     @topic = Topic.find(params[:id])
+    authorize @topic
     if @topic.update_attributes(topic_params)
       flash[:notice] = "Topic was successfully updated"
       redirect_to topics_path
@@ -37,10 +41,12 @@ class TopicsController < ApplicationController
       flash[:error] = "Error updating topic, please try again"
       render :edit
     end
+    
   end
   
   def destroy
     @topic = Topic.find(params[:id])
+    authorize @topic
     if @topic.destroy
       flash[:notice] = "Topic was successfully destroyed"
       redirect_to topics_path

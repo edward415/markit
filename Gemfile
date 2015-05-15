@@ -63,3 +63,6 @@ gem 'will_paginate', '~> 3.0.5'
 
 # For Site Previews
 gem 'embedly'
+
+# For Authorization
+gem 'pundit'

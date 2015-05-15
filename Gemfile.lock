@@ -77,6 +77,8 @@ GEM
     oauth (0.4.7)
     orm_adapter (0.5.0)
     pg (0.18.1)
+    pundit (1.0.0)
+      activesupport (>= 3.0.0)
     querystring (0.1.0)
     rack (1.5.2)
     rack-test (0.6.3)
@@ -153,6 +155,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  pundit
   rails (= 4.1.6)
   rails_12factor
   sass-rails (~> 4.0.3)
