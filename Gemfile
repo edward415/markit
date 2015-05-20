@@ -66,3 +66,4 @@ gem 'embedly'
 
 # For Authorization
 gem 'pundit'
+gem 'gritter'
