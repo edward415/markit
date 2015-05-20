@@ -66,3 +66,8 @@ gem 'embedly'
 
 # For Authorization
 gem 'pundit'
+
+# Descriptive URL
+gem 'friendly_id'
+
+gem 'gritter', "1.1.0"
