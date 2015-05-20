@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'user/show'
+
   devise_for :users
   get 'welcome/index'
 
@@ -8,8 +10,14 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
   
   resources :topics do
-    resources :bookmarks, except: [:index, :show]
+    resources :bookmarks, except: [:index, :show] do
+      resources :likes, only: [:create, :destroy]
+    end
   end
+  
+  
+  
+  resources :users, only: [:show]
   
   
   post :incoming, to: 'incoming#create'
