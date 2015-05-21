@@ -10,11 +10,16 @@
 <div class="container">
   <ul class="nav nav-pills">
     <li role="presentation" class="active"><%= link_to "Markit", root_path %></li>
-    <li role="presentation"><%= link_to "Discover", topics_path %></li>
+    <li role="presentation"><%= link_to "Discover Cool Sites", topics_path %></li>
     <div class="pull-right user-info nav nav-pills">
     <% if current_user %>
       <li role="presentation"><%= link_to "Hi #{current_user.name || current_user.email}", current_user %></li>
-      <li role="presentation"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+      <li role="presentation"><%= link_to edit_user_registration_path, class: 'btn btn-primary btn-sm' do %>
+        <span class="glyphicon glyphicon-wrench"></span>
+      <% end %>
+      <li role="presentation"><%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' do %>
+        <span class="glyphicon glyphicon-log-out"></span>
+      <% end %>
     <% else %>
       <li role="presentation"><%= link_to "Sign Up", new_user_registration_path %></li>
       <li role="presentation"><%= link_to "Login", new_user_session_path %></li>
