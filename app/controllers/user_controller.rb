@@ -1,6 +1,7 @@
 class UserController < ApplicationController
   def show
-    @user_bookmarks = User.bookmarks
-    @liked_bookmarks = User.likes
+    @bookmarks = User.bookmarks
+    @likes = User.likes
+    @topic = User.topics
   end
 end
