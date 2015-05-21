@@ -1,4 +1,5 @@
 <div>
+<% if user_signed_in? %>
   <% if like = current_user.liked(bookmark) %>
     <%= link_to [bookmark.topic, bookmark, like], class: 'btn btn-danger', method: :delete do %>
       <i class="glyphicon glyphicon-heart-empty"> </i>&nbsp; Unlike
@@ -8,4 +9,5 @@
       <i class="glyphicon glyphicon-heart"> </i>&nbsp; Like
     <% end %>
   <% end %>
+<% end %>
 </div>

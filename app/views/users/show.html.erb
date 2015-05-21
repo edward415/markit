@@ -1,0 +1,9 @@
+<div class="container">
+<h2><%= @user.name %>'s Profile</h2>
+<h3>Created Bookmarks</h3>
+<p><%= pluralize(@user_bookmarks.count,'bookmark') %></p>
+<%= render partial: 'bookmarks/bookmark', locals: {bookmarks: @user_bookmarks} %>
+<h3>Liked Bookmarks</h3>
+<p><%= pluralize(@liked_bookmarks.count, 'likes') %></p>
+<%= render partial: 'bookmarks/bookmark', locals: {bookmarks: @liked_bookmarks} %>
+</div>
